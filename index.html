@@ -32,16 +32,13 @@
     </form>
 
     <script src="script.js">
-document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     
     document.getElementById('resultName').textContent = `Name: ${params.get('name')}`;
     document.getElementById('resultEmail').textContent = `Email: ${params.get('email')}`;
     document.getElementById('resultNumberOfPets').textContent = `Number of Pets: ${params.get('number-of-pets')}`;
     document.getElementById('resultFavoritePet').textContent = `Favorite Pet: ${params.get('favorite-pet')}`;
-    document.getElementById('resultComments').textContent = `Comments: ${params.get('comments')}`;
-}
-                         );
         
     </script>
     
