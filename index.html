@@ -32,22 +32,15 @@
     </form>
 
     <script src="script.js">
-      <div>
-      document.getElementById('petForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const form = event.target;
-
-    const name = form.name.value;
-    const email = form.email.value;
-    const numberOfPets = form['number-of-pets'].value;
-    const favoritePet = form['favorite-pet'].value;
-    const comments = form.comments.value;
-
-    const queryString = `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&number-of-pets=${encodeURIComponent(numberOfPets)}&favorite-pet=${encodeURIComponent(favoritePet)}&comments=${encodeURIComponent(comments)}`;
-    window.location.href = `results.html?${queryString}`;
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    
+    document.getElementById('resultName').textContent = `Name: ${params.get('name')}`;
+    document.getElementById('resultEmail').textContent = `Email: ${params.get('email')}`;
+    document.getElementById('resultNumberOfPets').textContent = `Number of Pets: ${params.get('number-of-pets')}`;
+    document.getElementById('resultFavoritePet').textContent = `Favorite Pet: ${params.get('favorite-pet')}`;
+    document.getElementById('resultComments').textContent = `Comments: ${params.get('comments')}`;
 });
-
-    </div>
     </script>
 </body>
 </html>
